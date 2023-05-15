@@ -12,6 +12,30 @@ import { languages } from '@codemirror/language-data'
 import { oneDark } from '@codemirror/theme-one-dark'
 import type React from 'react'
 
+export const transparentTheme = EditorView.theme({
+  '&': {
+    backgroundColor: 'transparent',
+    height: '100%',
+  }
+})
+
+const syntaxHighlight = HighlightStyle.define([
+  {
+    tag: tags.heading1,
+    fontSize: '1.6rem',
+    fontWeight: 'bold',
+  },
+  {
+    tag: tags.heading2,
+    fontSize: '1.4rem',
+    fontWeight: 'bold',
+  },
+  {
+    tag: tags.heading3,
+    fontSize: '1.2rem',
+    fontWeight: 'bold'
+  }
+])
 interface Props {
   initialDoc: string,
   onChange: (state: EditorState) => void
@@ -35,6 +59,14 @@ const useCodemirror = <T extends Element>(props: Props): [React.MutableRefObject
         bracketMatching(),
         defaultHighlightStyle.fallback,
         highlightActiveLine(),
+        markdown({
+          base: markdownLanguage,
+          codeLanguages: languages,
+          addKeymap: true,
+        }),
+        oneDark,
+        transparentTheme,
+        syntaxHighlight,
         EditorView.lineWrapping,
         EditorView.updateListener.of(update => {
           if (update.changes) {
