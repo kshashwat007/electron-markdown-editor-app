@@ -17,7 +17,7 @@ interface Props {
 
 const useCodemirror = <T extends Element>(props: Props): [React.MutableRefObject<T | null>, EditorView?] => {
   const refContainer = useRef<T>(null)
-  const [editorView, setEditorView] = useState<Element>()
+  const [editorView, setEditorView] = useState<EditorView>()
   const { onChange,initialDoc } = props
   useEffect(() => {
     if (!refContainer.current) return
