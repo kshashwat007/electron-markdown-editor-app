@@ -6,8 +6,10 @@ import { history, historyKeymap } from '@codemirror/history'
 import { indentOnInput } from '@codemirror/language'
 import { bracketMatching } from '@codemirror/matchbrackets'
 import { lineNumbers, highlightActiveLineGutter } from '@codemirror/gutter'
-import { defaultHighlightStyle } from '@codemirror/highlight'
-import { javascript } from '@codemirror/lang-javascript'
+import { defaultHighlightStyle, HighlightStyle, tags } from '@codemirror/highlight'
+import { markdown, markdownLanguage } from '@codemirror/lang-markdown'
+import { languages } from '@codemirror/language-data'
+import { oneDark } from '@codemirror/theme-one-dark'
 import type React from 'react'
 
 interface Props {
@@ -18,12 +20,12 @@ interface Props {
 const useCodemirror = <T extends Element>(props: Props): [React.MutableRefObject<T | null>, EditorView?] => {
   const refContainer = useRef<T>(null)
   const [editorView, setEditorView] = useState<EditorView>()
-  const { onChange,initialDoc } = props
+  const { onChange } = props
   useEffect(() => {
     if (!refContainer.current) return
-
+    
     const startState = EditorState.create({
-      doc: initialDoc,
+      doc: props.initialDoc,
       extensions: [
         keymap.of([...defaultKeymap, ...historyKeymap]),
         lineNumbers(),
@@ -33,7 +35,6 @@ const useCodemirror = <T extends Element>(props: Props): [React.MutableRefObject
         bracketMatching(),
         defaultHighlightStyle.fallback,
         highlightActiveLine(),
-        javascript(),
         EditorView.lineWrapping,
         EditorView.updateListener.of(update => {
           if (update.changes) {

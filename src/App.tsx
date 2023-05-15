@@ -1,13 +1,16 @@
-import React, {useState} from 'react'
+import React, {useState,useCallback} from 'react'
 import './App.scss'
 import Editor from './editor'
 
 const App: React.FC = () => {
-  const [count,setCount] = useState(0)
-
+  const [doc, setDoc] = useState<string>('# Hello, World!')
+  const handleDocChange = useCallback(
+    newDoc => setDoc(newDoc)
+  ,[])
+  
   return (
     <div className='app'>
-      <Editor />
+      <Editor onChange={handleDocChange} initialDoc={doc} />
     </div>
   )
 }
