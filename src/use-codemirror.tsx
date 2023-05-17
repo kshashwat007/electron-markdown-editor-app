@@ -69,7 +69,6 @@ const useCodemirror = <T extends Element>(props: Props): [React.MutableRefObject
         syntaxHighlight,
         EditorView.lineWrapping,
         EditorView.updateListener.of(update => {
-          console.log(update)
           if (update.changes) {
             onChange && onChange(update.state)
           }
