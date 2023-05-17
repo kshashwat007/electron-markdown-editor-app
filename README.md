@@ -3,12 +3,12 @@
 ![image](https://github.com/kshashwat007/electron-markdown-editor-app/assets/22960998/bc07d645-1795-46ff-b961-ab3cfa149b99)
 
 # Stack
-Electron 
-Vite 
-React 
-TypeScript 
-CodeMirror
-Remark 
+* Electron 
+* Vite 
+* React 
+* TypeScript 
+* CodeMirror
+* Remark 
 
 
 [![awesome-vite](https://awesome.re/mentioned-badge.svg)](https://github.com/vitejs/awesome-vite)
