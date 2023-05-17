@@ -1,4 +1,7 @@
-# electron-vite-react
+# Electron Markdown Editor
+
+![image](https://github.com/kshashwat007/electron-markdown-editor-app/assets/22960998/bc07d645-1795-46ff-b961-ab3cfa149b99)
+
 
 [![awesome-vite](https://awesome.re/mentioned-badge.svg)](https://github.com/vitejs/awesome-vite)
 ![GitHub stars](https://img.shields.io/github/stars/caoxiemeihao/vite-react-electron?color=fa6470)
