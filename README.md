@@ -2,7 +2,7 @@
 
 ![image](https://github.com/kshashwat007/electron-markdown-editor-app/assets/22960998/bc07d645-1795-46ff-b961-ab3cfa149b99)
 
-Stack
+# Stack
 Electron 
 Vite 
 React 
