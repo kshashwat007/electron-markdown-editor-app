@@ -69,12 +69,3 @@ export default {
 ```
 -->
 
-## 🔧 Additional features
-
-1. electron-updater 👉 [see docs](src/components/update/README.md)
-1. playwright
-
-## ❔ FAQ
-
-- [C/C++ addons, Node.js modules - Pre-Bundling](https://github.com/electron-vite/vite-plugin-electron-renderer#dependency-pre-bundling)
-- [dependencies vs devDependencies](https://github.com/electron-vite/vite-plugin-electron-renderer#dependencies-vs-devdependencies)
