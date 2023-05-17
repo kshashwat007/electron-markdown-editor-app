@@ -17,7 +17,8 @@ A Markdown editor made using Electron and react. Vite is used as a build tool an
 ## 🛫 Quick start
 
 ```sh
-npm create electron-vite
+npm i
+npm run dev
 ```
 
 ![electron-vite-react.gif](/electron-vite-react.gif)
